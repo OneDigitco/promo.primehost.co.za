@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/primehos/promo.primehost.co.za
+    - /bin/cp -R * $DEPLOYPATH
