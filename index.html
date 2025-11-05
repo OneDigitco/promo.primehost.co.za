@@ -33,6 +33,40 @@
             box-sizing: border-box;
         }
         
+        /* Custom container for consistent layout width */
+        .container-custom {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* For screens larger than 1200px */
+        @media (min-width: 1200px) {
+            .container-custom {
+                width: 90%;
+                max-width: 1400px;
+            }
+        }
+
+        /* For medium screens */
+        @media (max-width: 1024px) {
+            .container-custom {
+                width: 90%;
+                max-width: none;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        /* For mobile screens */
+        @media (max-width: 768px) {
+            .container-custom {
+                width: 100%;
+                max-width: none;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             font-size: 18px;
@@ -170,6 +204,9 @@
 
         .feature-card {
             transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .feature-card:hover {
@@ -193,7 +230,7 @@
 
     <!-- Header -->
     <header id="header" class="fixed w-full z-40 transition-all duration-300 bg-white/95 backdrop-blur-sm py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container-custom mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
                 <a href="https://www.primehost.co.za/#/" class="flex items-center space-x-3">
                     <img src="https://media.phst.co.za/file/ph/primehost-logo-800.png" alt="Primehost" class="h-10 w-auto">
@@ -273,7 +310,7 @@
 
     <!-- Hero Section -->
     <section id="hero" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto">
+        <div class="container-custom mx-auto">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-8 fade-in-observer">
                     <!-- Campaign Countdown -->
@@ -286,7 +323,7 @@
 
                     <div class="space-y-8 fade-in-observer pt-8">
                     <h1 class="text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                    <span class="text-[#FF5841]">This one is on us.</span> Your free website awaits!
+                        <span class="text-[#FF5841]">This one is on us.</span> Your free website awaits!
                     </h1>
                     </div>
                     <p class="text-xl text-gray-600 leading-relaxed">
@@ -314,20 +351,29 @@
                     </div>
 
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://www.primehost.co.za/#/pricing#hosting-plans" class="primary-btn inline-flex items-center justify-center text-white px-8 py-4 rounded-lg text-lg font-medium shadow-lg">
-                            Get started – view hosting plans
-                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </a>
-                        <a href="https://webdesignspecs.primehost.co.za/" class="secondary-btn inline-flex items-center justify-center text-white px-8 py-4 rounded-lg text-lg font-medium shadow-lg">
-                            Already a client? Submit request
-                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </a>
-                    </div>
+                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+    <!-- New Clients -->
+    <div class="flex flex-col items-center">
+        <span class="text-sm text-gray-500 font-medium mb-2">New clients</span>
+        <a href="https://www.primehost.co.za/#/pricing#hosting-plans" class="primary-btn inline-flex items-center justify-center text-white px-8 py-4 rounded-lg text-lg font-medium shadow-lg">
+            Get started
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Existing Clients -->
+    <div class="flex flex-col items-center">
+        <span class="text-sm text-gray-500 font-medium mb-2">Existing clients</span>
+        <a href="https://webdesignspecs.primehost.co.za/" class="secondary-btn inline-flex items-center justify-center text-white px-8 py-4 rounded-lg text-lg font-medium shadow-lg">
+            Request design
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+        </a>
+    </div>
+</div>
 
                     <p class="text-sm text-gray-500">
                         Campaign runs from 1 October to 31 January 2026. Terms apply. ✨
@@ -347,7 +393,7 @@
 
     <!-- Why Participate Section -->
     <section id="why" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
+        <div class="container-custom mx-auto">
             <div class="text-center mb-16 fade-in-observer">
                 <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
     Professional.&nbsp;&nbsp;&nbsp;Responsive.&nbsp;&nbsp;&nbsp;Ready.
@@ -401,7 +447,7 @@
 
     <!-- Who Qualifies Section -->
     <section id="qualify" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
+        <div class="container-custom mx-auto">
             <div class="text-center mb-16 fade-in-observer">
                 <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                     Who qualifies for a complimentary website?
@@ -483,7 +529,7 @@
 
     <!-- Campaign Steps Section -->
     <section id="steps" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
+        <div class="container-custom mx-auto">
             <div class="text-center mb-16 fade-in-observer">
                 <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                     How it works, from signup to launch 🚀
@@ -495,46 +541,62 @@
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
                     <div class="relative fade-in-observer">
-                        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-red-500">
-                            <div class="bg-gradient-to-br from-red-500 to-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6 mx-auto shadow-lg">1</div>
-                            <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Sign up or register interest</h3>
-                            <p class="text-gray-700 text-center">Choose your hosting package or confirm eligibility</p>
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-red-500 h-full flex flex-col">
+                            <div class="flex-grow flex flex-col items-center">
+                                <div class="bg-gradient-to-br from-red-500 to-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg">1</div>
+                                <svg class="w-10 h-10 text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div class="mt-auto">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Sign up or register interest</h3>
+                                <p class="text-gray-700 text-center">Choose your hosting package or confirm eligibility</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="relative fade-in-observer">
-                        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-red-500">
-                            <div class="bg-gradient-to-br from-red-500 to-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6 mx-auto shadow-lg">2</div>
-                            <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Share your vision</h3>
-                            <p class="text-gray-700 text-center">Complete our simple website content form or email your brief</p>
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-red-500 h-full flex flex-col">
+                            <div class="flex-grow flex flex-col items-center">
+                                <div class="bg-gradient-to-br from-red-500 to-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg">2</div>
+                                <svg class="w-10 h-10 text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="mt-auto">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Share your vision</h3>
+                                <p class="text-gray-700 text-center">Complete our simple website content form or email your brief</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="relative fade-in-observer">
-                        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-red-500">
-                            <div class="bg-gradient-to-br from-red-500 to-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6 mx-auto shadow-lg">3</div>
-                            <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-                            </svg>
-                            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Design and review</h3>
-                            <p class="text-gray-700 text-center">We craft your website and refine it based on your feedback</p>
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-red-500 h-full flex flex-col">
+                            <div class="flex-grow flex flex-col items-center">
+                                <div class="bg-gradient-to-br from-red-500 to-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg">3</div>
+                                <svg class="w-10 h-10 text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                                </svg>
+                            </div>
+                            <div class="mt-auto">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Design and review</h3>
+                                <p class="text-gray-700 text-center">We craft your website and refine it based on your feedback</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="relative fade-in-observer">
-                        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-red-500">
-                            <div class="bg-gradient-to-br from-red-500 to-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6 mx-auto shadow-lg">4</div>
-                            <svg class="w-10 h-10 text-red-500 mb-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Launch and celebrate</h3>
-                            <p class="text-gray-700 text-center">Your new site goes live, fully hosted and supported by Primehost</p>
+                        <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-red-500 h-full flex flex-col">
+                            <div class="flex-grow flex flex-col items-center">
+                                <div class="bg-gradient-to-br from-red-500 to-teal-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg">4</div>
+                                <svg class="w-10 h-10 text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div class="mt-auto">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Launch and celebrate</h3>
+                                <p class="text-gray-700 text-center">Your new site goes live, fully hosted and supported by Primehost</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -547,7 +609,7 @@
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 fade-in-observer">
             <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                See what we have created for others
+                A glimpse of what we have built for others.
             </h2>
         </div>
 
@@ -619,7 +681,7 @@
 <!-- Adapt SA -->
 <a href="https://www.adaptsa.co.za/" target="_blank" rel="noopener noreferrer" class="portfolio-card group relative overflow-hidden rounded-xl shadow-lg bg-white border-2 border-gray-200 hover:border-red-500 fade-in-observer">
     <div class="h-64 relative overflow-hidden">
-        <img src="https://media.phst.co.za/file/ph/primehost-adaptsa.png" alt="AdaptSA" class="absolute top-0 left-0 w-full h-full object-cover" style="object-position: top left;">
+        <img src="https://media.phst.co.za/file/ph/primehost-adaptsa.png" alt="Adapt SA" class="absolute top-0 left-0 w-full h-full object-cover" style="object-position: top left;">
         <div class="absolute inset-0 bg-[#591B8C] bg-opacity-15"></div>
         <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div class="flex items-center space-x-2 text-white">
@@ -632,7 +694,7 @@
     </div>
     <div class="p-4 bg-white">
         <p class="text-sm flex items-center" style="color: #FF5841;">
-            Visit AdaptSA
+            Visit Adapt SA
         </p>
     </div>
 </a>
@@ -726,13 +788,13 @@
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                     <a href="https://www.primehost.co.za/#/pricing#hosting-plans" class="inline-flex items-center justify-center bg-white text-red-500 px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                        Sign up for hosting – get your free website
+                        Get started
                         <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
                     </a>
                     <a href="https://webdesignspecs.primehost.co.za/" class="inline-flex items-center justify-center bg-teal-500 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-teal-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 border-2 border-white">
-                        Submit your free website request
+                        Request design
                         <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
@@ -749,7 +811,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
+        <div class="container-custom mx-auto">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                 <!-- Company Info -->
                 <div>
